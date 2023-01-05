@@ -9,7 +9,7 @@ Start a REPL with `python shlipple.py` and code away.
 
 In Python:
 
-- atoms (strings, `#t`, `#f`, integers)
+- atoms (strings, `#t`, `#f`, positive integers)
 - lists `(...)`
 - `quote`, `'`
 - `atom`

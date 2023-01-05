@@ -13,6 +13,13 @@
 
 ;;
 
+(defun or (x y)
+  (cond (x #t)
+        (y #t)
+        (#t #f)))
+
+;;
+
 (defun not (x)
   (cond (x #f)
         (#t #t)))
@@ -45,3 +52,16 @@
                            (cond ((eq b 1) a)
                                  (#t (iter (+ a x) (dec b))))))
              x y))))
+
+;;
+
+(defun < (x y)
+  (cond ((eq x y) #f)
+        ((eq x 0) #t)
+        ((eq y 0) #f)
+        (#t (< (dec x) (dec y)))))
+
+;;
+
+(defun > (x y)
+  (not (or (< x y) (eq x y))))

@@ -41,7 +41,7 @@ def reader_replace(sexp):
 ### basic type checks
 
 def is_atom(sexp):
-    return bool(isinstance(sexp, int) or (re.fullmatch(r'[\*\+\-#\w\d]+', sexp)))
+    return bool(isinstance(sexp, int) or (re.fullmatch(r'[<>\*\+\-#\w\d]+', sexp)))
 
 def is_list(sexp):
     if not (isinstance(sexp, str)):
