@@ -23,3 +23,23 @@
   (cond ((null x) y)
         (#t (cons (car x)
                   (append (cdr x) y)))))
+
+;;
+
+(defun + (x y)
+  (cond ((eq y 0) x)
+        (#t (+ (inc x) (dec y)))))
+
+;;
+
+(defun - (x y)
+  (cond ((eq y 0) x)
+        (#t (- (dec x) (dec y)))))
+
+;;
+
+(defun * (x y)
+  ((label iter (lambda (a b)
+                 (cond ((eq b 1) a)
+                       (#t (iter (+ a x) (dec b))))))
+   x y))

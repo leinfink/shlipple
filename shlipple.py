@@ -41,7 +41,7 @@ def reader_replace(sexp):
 ### basic type checks
 
 def is_atom(sexp):
-    return bool(isinstance(sexp, int) or (re.fullmatch(r'[#\w\d]+', sexp)))
+    return bool(isinstance(sexp, int) or (re.fullmatch(r'[\*\+\-#\w\d]+', sexp)))
 
 def is_list(sexp):
     if not (isinstance(sexp, str)):
@@ -104,6 +104,16 @@ def _defun(name, params, expr, binds):
     binds.update({name: "( lambda " + params + " " + expr + " )" })
     return "#<lambda>"
 
+def _dec(val):
+    if not isinstance(val, int):
+        return "#err not a number"
+    return val - 1
+
+def _inc(val):
+    if not isinstance(val, int):
+        return "#err not a number"
+    return val + 1
+
 def _env(binds):
     return "# active bindings: " + str(binds)
 
@@ -141,6 +151,10 @@ def eval(sexp, binds):
                     return _cond(sexp[1:], binds)
                 case "defun":
                     return _defun(sexp[1], sexp[2], sexp[3], binds)
+                case "dec":
+                    return _dec(eval(sexp[1], binds))
+                case "inc":
+                    return _inc(eval(sexp[1], binds))
                 case "env":
                     return _env(binds)
                 case _:
@@ -182,6 +196,6 @@ for core_func in core_library:
     eval(prepare(core_func), globalenv)
 
 while True:
-    sexpr = prepare(input())
+    sexpr = prepare(input("> "))
     output = eval(sexpr, globalenv)
     print(output)
