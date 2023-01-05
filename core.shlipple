@@ -65,3 +65,14 @@
 
 (defun > (x y)
   (not (or (< x y) (eq x y))))
+
+;;
+
+(defun reverse (x)
+  ((label iter (lambda (acc coll)
+                 (cond ((null coll) acc)
+                       (#t (iter (cons (car coll) acc)
+                                 (cdr coll))))))
+   '() x))
+
+;;
