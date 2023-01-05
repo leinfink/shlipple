@@ -3,7 +3,7 @@ SHitty LIsp in Python Provides Lots of Entertainment.
 
 Shoutout to my peeps McCarthy, Abelson, Sussman, Graham! I mostly relied on the latter's paper on McCarthy ("The Roots of Lisp").
 
-Start a REPL with `python shlipple.py` and code away. The REPL only supports single-line expressions currently, tho (very shitty). Pass file names as command line arguments to import their functions (functions need to be delimited with `;;`). For example, run `python shlipple.py playground.shlipple` to import the (fizzbuzz max) function.
+Start a REPL with `python shlipple.py` and code away. The REPL only supports single-line expressions currently, tho (very shitty). Pass file names as command line arguments to import their functions (functions need to be delimited with `;;`). For example, run `python shlipple.py playground.shlipple` to import the `(fizzbuzz max)` function.
 
 ## Currently implemented
 
