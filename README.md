@@ -1,7 +1,7 @@
 # shlipple
 SHitty LIsp in Python Provides Lots of Entertainment.
 
-Shoutout to my peeps McCarthy, Abelson, Sussman, Graham!
+Shoutout to my peeps McCarthy, Abelson, Sussman, Graham! I mostly relied on the latter's paper on McCarthy ("The Roots of Lisp").
 
 Start a REPL with `python shlipple.py` and code away.
 
