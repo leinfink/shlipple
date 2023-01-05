@@ -5,6 +5,8 @@ Shoutout to my peeps McCarthy, Abelson, Sussman, Graham! I mostly relied on the 
 
 Start a REPL with `python shlipple.py` and code away. Needs Python >= 3.10. The REPL only supports single-line expressions currently, tho (very shitty). Pass file names as command line arguments to import their functions (functions need to be delimited with `;;`). For example, run `python shlipple.py playground.shlipple` to import the `(fizzbuzz max)` function.
 
+Needs Python 3.10 because I added a match-case statement in there.
+
 ## Currently implemented
 
 In Python:
@@ -37,7 +39,7 @@ In Shlipple:
 - `*`
 - `<`
 - `>`
-- reverse
+- `reverse`
 
 All very shittily, of course.
 
