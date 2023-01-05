@@ -29,10 +29,13 @@ In Shlipple:
 
 - `null`
 - `and`
+- `or`
 - `not`
 - `append`
 - `+`
 - `-`
 - `*`
+- `<`
+- `>`
 
 All very shittily, of course.
