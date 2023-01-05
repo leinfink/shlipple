@@ -39,7 +39,7 @@ In Shlipple:
 - `*`
 - `<`
 - `>`
-- reverse
+- `reverse`
 
 All very shittily, of course.
 
