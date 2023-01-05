@@ -7,7 +7,7 @@ Start a REPL with `python shlipple.py` and code away.
 
 ## Currently implemented
 
-In python:
+In Python:
 
 - atoms (strings, `#t`, `#f`, integers)
 - lists `(...)`
