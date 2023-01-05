@@ -3,7 +3,7 @@ SHitty LIsp in Python Provides Lots of Entertainment.
 
 Shoutout to my peeps McCarthy, Abelson, Sussman, Graham!
 
-Start a REPL with `./shlipple.py`.
+Start a REPL with `python shlipple.py` and code away.
 
 ## Currently implemented
 
