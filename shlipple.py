@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import re
+import re, sys
 
 globalenv = {"a": 10}
 
@@ -189,11 +189,19 @@ def prepare(s):
 
 with open('core.shlipple', 'r') as core_file:
     core_library = core_file.read().split(";;")
-
 for core_func in core_library:
     if not core_func:
         continue
     eval(prepare(core_func), globalenv)
+
+if __name__ == "__main__":
+    for arg in sys.argv:
+        with open(arg, 'r') as import_file:
+            import_library = import_file.read().split(";;")
+        for import_func in import_library:
+            if not import_func:
+                continue
+            eval(prepare(import_func), globalenv)
 
 while True:
     sexpr = prepare(input("> "))

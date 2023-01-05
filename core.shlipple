@@ -74,5 +74,3 @@
                        (#t (iter (cons (car coll) acc)
                                  (cdr coll))))))
    '() x))
-
-;;
