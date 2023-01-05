@@ -3,6 +3,8 @@ SHitty LIsp in Python Provides Lots of Entertainment.
 
 Shoutout to my peeps McCarthy, Abelson, Sussman, Graham!
 
+Start a REPL with `./shlipple.py`.
+
 ## Currently implemented
 
 In python:
