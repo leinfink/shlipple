@@ -48,8 +48,6 @@ In optional library math.shlipple:
 - `cube`
 - `factorial` - there's no tail-call recursion yet, so...
 
-(factorial)
-
 All very shittily, of course.
 
 ## Examples
