@@ -5,7 +5,7 @@ Shoutout to my peeps McCarthy, Abelson, Sussman, Graham! I mostly relied on the 
 
 Start a REPL with `python shlipple.py` and code away. The REPL only supports single-line expressions currently, tho (very shitty). Pass file names as command line arguments to import their functions (functions need to be delimited with `;;`). For example, run `python shlipple.py playground.shlipple` to import the `(fizzbuzz max)` function.
 
-Of course, we feature an amazing shlipple-interpreter in shlipple, to be found in the `eval` function within the shlipple.shlipple library.
+Of course, we feature an amazing shlipple-interpreter in shlipple, to be found in the `eval` function within the shlipple.shlipple library (see below).
 
 Needs Python >= 3.10 because I added a match-case statement in there.
 
@@ -56,6 +56,18 @@ In optional library math.shlipple:
 
 All very shittily, of course.
 
+## Eval (lisp interpreter in shlipple)
+`Eval` implements all the basic commands except `defun` and `env` (and no  `'` shorthand for  `quote`).
+Optionally use `(env)` to pass all shlipple-core bindings (and others you have added) to `(eval)`. Eval takes an s-expr and an alist of bindings.
+
+```
+python shlipple.py shlipple.shlipple
+
+(eval '(map '(lambda (x) (+ x 1)) '(1 2 3 4 5)) (env))
+;=> ( 2 3 4 5 6 )
+
+```
+
 ## Examples
 
 ### Map
@@ -100,16 +112,4 @@ All very shittily, of course.
             
 (fizzbuzz 100)
 ;=> (0 1 2 FIZZ 4 BUZZ FIZZ 7 8 FIZZ BUZZ 11 FIZZ 13 14 FIZZBUZZ 16 17 FIZZ 19 BUZZ FIZZ 22 23 FIZZ BUZZ 26 FIZZ 28 29 FIZZBUZZ 31 32 FIZZ 34 BUZZ FIZZ 37 38 FIZZ BUZZ 41 FIZZ 43 44 FIZZBUZZ 46 47 FIZZ 49 BUZZ FIZZ 52 53 FIZZ BUZZ 56 FIZZ 58 59 FIZZBUZZ 61 62 FIZZ 64 BUZZ FIZZ 67 68 FIZZ BUZZ 71 FIZZ 73 74 FIZZBUZZ 76 77 FIZZ 79 BUZZ FIZZ 82 83 FIZZ BUZZ 86 FIZZ 88 89 FIZZBUZZ 91 92 FIZZ 94 BUZZ FIZZ 97 98 FIZZ BUZZ
-```
-
-### Eval (lisp interpreter in shlipple)
-`Eval` implements all the basic commands except `defun` and `env` (and no  `'` shorthand for  `quote`).
-Optionally use `(env)` to pass all shlipple-core bindings (and others you have added) to `(eval)`. Eval takes an s-expr and an alist of bindings.
-
-```
-python shlipple.py shlipple.shlipple
-
-(eval '(map '(lambda (x) (+ x 1)) '(1 2 3 4 5)) (env))
-;=> ( 2 3 4 5 6 )
-
 ```
