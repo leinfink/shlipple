@@ -40,10 +40,25 @@ In Shlipple:
 - `<`
 - `>`
 - `reverse`
+- `map`
 
 All very shittily, of course.
 
-## Fizzbuzz
+## Examples
+
+### Map
+
+```
+(map 'inc '(1 2 3 4 5))
+; => (2 3 4 5 6)
+
+(map '(lambda (x) (* x 2)) '(1 2 3 4 5))
+; => (2 4 6 8 10)
+ 
+```
+
+
+### Fizzbuzz
 
 ```
 (defun fizzbuzz (max)
