@@ -1,6 +1,6 @@
 ;; -*-Lisp-*-
 
-;; adapted from Graham/McCarthy "The Roots of Lisp"
+;; adapted (nearly verbatim) from Graham/McCarthy "The Roots of Lisp"
 
 ;;
 
