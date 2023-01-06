@@ -83,3 +83,17 @@
                        (#t (iter (append acc (cons (f (car coll)) '()))
                                  (cdr coll))))))
    '() x))
+
+;;
+
+(defun zip (x y)
+  (cond ((and (null x) (null y)) '())
+        ((and (not (atom x)) (not (atom y)))
+         (cons (cons (car x) (cons (car y) '()))
+               (zip (cdr x) (cdr y))))))
+
+;;
+
+(defun assoc (x y)
+  (cond ((eq (car (car y)) x) (cdr (car y)))
+        (#t (assoc x (cdr y)))))
