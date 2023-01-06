@@ -1,0 +1,49 @@
+;; -*-Lisp-*-
+
+;; adapted from Graham/McCarthy "The Roots of Lisp"
+
+;;
+
+(defun eval (e a)
+  (cond
+    ((atom e)
+     (cond ((eq e '#t) #t)
+           ((eq e '#f) #f)
+           ((eq e '()) '())
+           (#t (assoc e a))))
+    ((atom (car e))
+     (cond
+       ((eq (car e) 'quote) (car (cdr e)))
+       ((eq (car e) 'atom) (atom (eval (car (cdr e)) a)))
+       ((eq (car e) 'eq) (eq (eval (car (cdr e)) a)
+                             (eval (car (cdr (cdr e))) a)))
+       ((eq (car e) 'car) (car (eval (car (cdr e)) a)))
+       ((eq (car e) 'cdr) (cdr (eval (car (cdr e)) a)))
+       ((eq (car e) 'cons) (cons (eval (car (cdr e)) a)
+                                 (eval (car (cdr (cdr e))) a)))
+       ((eq (car e) 'cond) (eval-cond (cdr e) a))
+       (#t (eval (cons (assoc (car e) a)
+                       (cdr e))
+                 a))))
+    ((eq (car (car e)) 'label)
+     (eval (cons (car (cdr (cdr (car e)))) (cdr e))
+           (cons (cons (car (cdr (car e))) (cons (car e) '())) a)))
+    ((eq (car (car e)) 'lambda)
+     (eval (car (cdr (cdr (car e))))
+           (append (zip (car (cdr (car e)))
+                         (eval-list (cdr e) a))
+                   a)))))
+
+;;
+
+(defun eval-cond (c a)
+  (cond ((eval (car (car c)) a)
+         (eval (car (cdr (car c))) a))
+        (#t (eval-cond (cdr c) a))))
+
+;;
+
+(defun eval-list (m a)
+  (cond ((null m) '())
+        (#t (cons (eval (car m) a)
+                  (eval-list (cdr m) a)))))
