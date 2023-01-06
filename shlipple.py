@@ -76,7 +76,7 @@ def _cdr(sexp):
     return "(" + " ".join(parse_layer(sexp)[1:]) + ")"
 
 def _cons(sexp1, sexp2):
-    return "(" + str(sexp1) + " " + " ".join(parse_layer(sexp2)) + ")"
+    return "( " + str(sexp1) + " " + " ".join(parse_layer(sexp2)) + " )"
 
 def _cond(sexps, binds):
     for clause in sexps:
