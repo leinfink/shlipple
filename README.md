@@ -103,7 +103,7 @@ All very shittily, of course.
 ```
 
 ### Eval (lisp interpreter in shlipple)
-Eval implements all the basic commands except `defun` and `env`.
+`Eval` implements all the basic commands except `defun` and `env` (and no  `'` shorthand for  `quote`).
 Optionally use `(env)` to pass all shlipple-core bindings (and others you have added) to `(eval)`. Eval takes an s-expr and an alist of bindings.
 
 ```
