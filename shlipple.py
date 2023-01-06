@@ -73,7 +73,7 @@ def _car(sexp):
     return parse_layer(sexp)[0]
 
 def _cdr(sexp):
-    return "(" + " ".join(parse_layer(sexp)[1:]) + ")"
+    return "( " + " ".join(parse_layer(sexp)[1:]) + " )"
 
 def _cons(sexp1, sexp2):
     return "( " + str(sexp1) + " " + " ".join(parse_layer(sexp2)) + " )"
