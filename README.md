@@ -106,6 +106,6 @@ Optionally use `(env)` to pass all shlipple-core bindings (and others you have a
 python shlipple.py shlipple.shlipple
 
 (eval '(map '(lambda (x) (+ x 1)) '(1 2 3 4 5)) (env))
-;=> ( 2 3 4 5 )
+;=> ( 2 3 4 5 6 )
 
 ```
