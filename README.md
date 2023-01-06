@@ -57,7 +57,7 @@ In optional library math.shlipple:
 All very shittily, of course.
 
 ## Eval (lisp interpreter in shlipple)
-`Eval` implements all the basic commands except `defun` and `env` (and there are some issues around `'` shorthand for  `quote` for atoms which I am too lazy to figure our right now).
+`Eval` implements all the basic commands except `defun` and `env` (and I think there are some issues with the `'` shorthand (for  `quote` ) for atoms, which I am too lazy to figure our right now).
 Optionally use `(env)` to pass all shlipple-core bindings (and others you have added) to `(eval)`. Eval takes an s-expr and an alist of bindings.
 
 ```
