@@ -25,6 +25,7 @@
        ((eq (car e) 'cons) (cons (eval (car (cdr e)) a)
                                  (eval (car (cdr (cdr e))) a)))
        ((eq (car e) 'cond) (eval-cond (cdr e) a))
+       ((eq (car e) 'number) (number (eval (car (cdr e)))))
        (#t (eval (cons (assoc (car e) a)
                        (cdr e))
                  a))))
