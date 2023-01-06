@@ -1,3 +1,7 @@
+;; -*-Lisp-*-
+
+;;
+
 (defun fizzbuzz (max)
   (reverse ((label iter
                    (lambda (n mod3 mod5 acc)

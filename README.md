@@ -42,6 +42,14 @@ In Shlipple:
 - `reverse`
 - `map`
 
+In optional library math.shlipple:
+
+- `square`
+- `cube`
+- `factorial` - there's no tail-call recursion yet, so...
+
+(factorial)
+
 All very shittily, of course.
 
 ## Examples
