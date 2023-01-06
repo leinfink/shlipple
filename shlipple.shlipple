@@ -10,9 +10,12 @@
      (cond ((eq e '#t) #t)
            ((eq e '#f) #f)
            ((eq e '()) '())
+           ((number e) e)
            (#t (assoc e a))))
     ((atom (car e))
      (cond
+       ((eq (car e) 'inc) (inc (eval (car (cdr e)))))
+       ((eq (car e) 'dec) (dec (eval (car (cdr e)))))
        ((eq (car e) 'quote) (car (cdr e)))
        ((eq (car e) 'atom) (atom (eval (car (cdr e)) a)))
        ((eq (car e) 'eq) (eq (eval (car (cdr e)) a)

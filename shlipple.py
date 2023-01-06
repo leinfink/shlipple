@@ -61,6 +61,12 @@ def _atom(sexp):
     else:
         return "#f"
 
+def _number(sexp):
+    if is_atom(sexp):
+        if isinstance(sexp, int) or sexp.isdigit():
+            return "#t"
+    return "#f"
+
 def _eq(sexp1, sexp2):
     if is_atom(sexp1) and is_atom(sexp2) and str(sexp1) == str(sexp2):
         return "#t"
@@ -119,7 +125,11 @@ def _inc(val):
     return val + 1
 
 def _env(binds):
-    return "# active bindings: " + str(binds)
+    output = "( "
+    for key, val in binds.items():
+        output += " ( " + str(key) + " " + str(val) + " ) "
+    return output + " )"
+    #return "# active bindings: " + str(binds)
 
 def eval(sexp, binds):
     sexp = reader_replace(sexp)
@@ -159,6 +169,8 @@ def eval(sexp, binds):
                     return _dec(eval(sexp[1], binds))
                 case "inc":
                     return _inc(eval(sexp[1], binds))
+                case "number":
+                    return _number(eval(sexp[1], binds))
                 case "env":
                     return _env(binds)
                 case _:
