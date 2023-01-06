@@ -25,9 +25,10 @@ In Python:
 - `defun`
 - `dec`
 - `inc`
-- `env` (shows currently active variable and function bindings)
+- `env` (alist of  all currently active variable and function bindings)
 - `lambda`
 - `label`
+- `number`
 
 In Shlipple:
 
@@ -43,6 +44,9 @@ In Shlipple:
 - `>`
 - `reverse`
 - `map`
+- `zip`
+- `assoc`
+
 
 In optional library math.shlipple:
 
