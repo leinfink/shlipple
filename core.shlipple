@@ -95,5 +95,5 @@
 ;;
 
 (defun assoc (x y)
-  (cond ((eq (car (car y)) x) (cdr (car y)))
+  (cond ((eq (car (car y)) x) (car (cdr (car y))))
         (#t (assoc x (cdr y)))))
