@@ -1,0 +1,20 @@
+;; -*-Lisp-*-
+
+;;
+
+(defun square (a)
+  (* a a))
+
+;;
+
+(defun cube (a)
+  (* a a a))
+
+;;
+
+(defun factorial (n)
+  ((label iter (lambda (product counter)
+                 (cond ((> counter n) product)
+                       (#t (iter (* counter product)
+                                 (+ counter 1))))))
+   (iter 1 1)))
