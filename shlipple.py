@@ -106,11 +106,15 @@ def _defun(name, params, expr, binds):
 
 def _dec(val):
     if not isinstance(val, int):
+        if val.isdigit():
+            return int(val) - 1
         return "#err not a number"
     return val - 1
 
 def _inc(val):
     if not isinstance(val, int):
+        if val.isdigit():
+            return int(val) + 1
         return "#err not a number"
     return val + 1
 
@@ -128,7 +132,7 @@ def eval(sexp, binds):
             try:
                 return binds[sexp]
             except KeyError:
-                return "#err: var not bound"
+                return "#err: var not bound "
     elif is_empty_list(sexp):
         return sexp
     elif is_list(sexp):

@@ -74,3 +74,12 @@
                        (#t (iter (cons (car coll) acc)
                                  (cdr coll))))))
    '() x))
+
+;;
+
+(defun map (f x)
+  ((label iter (lambda (acc coll)
+                 (cond ((null coll) acc)
+                       (#t (iter (append acc (cons (f (car coll)) '()))
+                                 (cdr coll))))))
+   '() x))
