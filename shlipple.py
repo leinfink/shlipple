@@ -44,14 +44,10 @@ def is_atom(sexp):
     return bool(isinstance(sexp, int) or (re.fullmatch(r'[<>\*\+\-#\w\d]+', sexp)))
 
 def is_list(sexp):
-    if not (isinstance(sexp, str)):
-        return False
-    return bool(re.fullmatch(r'\(.*\)', sexp))
+    return isinstance(sexp, str) and bool(re.fullmatch(r'\(.*\)', sexp))
 
 def is_empty_list(sexp):
-    if not (isinstance(sexp, str)):
-        return False
-    return bool(re.fullmatch(r'\( *\)', sexp))
+    return isinstance(sexp, str) and bool(re.fullmatch(r'\( *\)', sexp))
 
 ### lisp functions
 
