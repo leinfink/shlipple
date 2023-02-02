@@ -58,9 +58,8 @@ def _atom(sexp):
         return "#f"
 
 def _number(sexp):
-    if is_atom(sexp):
-        if isinstance(sexp, int) or sexp.isdigit():
-            return "#t"
+    if is_atom(sexp) and (isinstance(sexp, int) or sexp.isdigit()):
+        return "#t"
     return "#f"
 
 def _eq(sexp1, sexp2):
